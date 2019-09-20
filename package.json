@@ -1,0 +1,24 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "BURGER  is a restaurant app that lets users input the names of burgers they'd like to eat.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BladimirOrellana/burger.git"
+  },
+  "author": "Bladimir Orellana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BladimirOrellana/burger/issues"
+  },
+  "homepage": "https://github.com/BladimirOrellana/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
+}
