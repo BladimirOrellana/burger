@@ -4,7 +4,7 @@
   "description": "BURGER  is a restaurant app that lets users input the names of burgers they'd like to eat.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon node index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
