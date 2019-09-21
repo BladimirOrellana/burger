@@ -4,9 +4,9 @@ const app = express();
 
 const exhandlebars = require('express-handlebars');
 
+const PORT = 3000;
 
-
-const PORT = process.env.PORT || 3000;
+PORT = process.env.PORT || 3000;
 
 
 // Parse request body as JSON
