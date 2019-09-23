@@ -1,0 +1,36 @@
+
+body{
+    background-color: green;
+}
+.wrapper{
+letter-spacing: 6px;
+
+}
+.boxes{
+    text-align: center;
+    padding: 40px;
+}
+#left-container{
+    background-color: red;
+
+}
+#center-container{
+    background-color: white;
+}
+#hanburger{
+    outline: none;
+    resize: none;
+    border-radius: 10px;
+}
+#right-container{
+    background-color: blue;
+}
+
+.burger-box{
+    padding: 20px;
+    background-color: gainsboro;
+    color: yellow;
+    margin: 5px;
+}
+
+

@@ -1,37 +1,4 @@
-<style type="text/css">
-body{
-    background-color: green;
-}
-.wrapper{
-letter-spacing: 6px;
 
-}
-.boxes{
-    text-align: center;
-    padding: 40px;
-}
-#left-container{
-    background-color: red;
-}
-#center-container{
-    background-color: white;
-}
-#hanburger{
-    outline: none;
-    resize: none;
-    border-radius: 10px;
-}
-#right-container{
-    background-color: blue;
-}
-
-.burger-box{
-    padding: 20px;
-    background-color: gainsboro;
-    margin: 5px;
-}
-
-</style>
 
   <div class="container-fluid wrapper">
      <div class="row">
@@ -42,16 +9,27 @@ letter-spacing: 6px;
                      
                      <div class="row">
                          <div class="col-sm-8">
+                             
                              {{burger_name}}
+                             {{devoured}}
+                             
+                           
+                            
 
                          </div>
                          <div class="col-sm-4">
-                             <button data-id="{{id}}" id="{{id}}">Eat it</button>
 
-                         </div>
+                              {{> buttons/buttons}}
+
+                        </div>
                      </div>
                      
                  </div>
+                 {{else}}
+                 <div class="container text-center">
+                     <p class="empty">Empty Table</p>
+                 </div>
+  
 
                
                  {{/each}}
@@ -70,7 +48,38 @@ letter-spacing: 6px;
 
          </div>
          <div class="boxes col-sm-12 col-md-3 col-lg-3" id="right-container">
-            
+           
+             <div class="row">
+                 {{#each dataDevoured}}
+                 <div class="col-sm-12 burger-box">
+                     
+                     <div class="row">
+                         <div class="col-sm-8">
+                             
+                             {{burger_name}}
+                             {{devoured}}
+                             
+                           
+                            
+
+                         </div>
+                         <div class="col-sm-4">
+
+                              {{> buttons/buttons}}
+
+                        </div>
+                     </div>
+                     
+                 </div>
+                 {{else}}
+                 <div class="container text-center">
+                     <p class="empty">Empty Table</p>
+                 </div>
+  
+
+               
+                 {{/each}}
+                 </div>
 
          </div>
      </div>

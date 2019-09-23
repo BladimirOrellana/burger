@@ -6,31 +6,31 @@ Here is where you setup a model for how to interface with the database.
 
 
 var burgermodel = {
-	all: function (r) {     
-		orm.all('burgers', function (res) {
+	all: function (table,column,devoured,r) {     
+		orm.all(table,column,devoured, function (res) {
 			r(res);
-			console.log("orm model ALL is working")
+			
 		});
 	},
 	// cols and vals are arrays
-	create: function (burger_name,  r) {
-		orm.create('burgers',burger_name, function (res) {
+	create: function (table,burger_name,  r) {
+		orm.create(table,burger_name, function (res) {
 			r(res);
-			console.log("orm model CREATE is working")
+			
 		});
 	},
-	update: function (column, newValue, condition, cb) {
-		orm.update('burgers', column, newValue, condition, function (res) {
+	update: function (table,id, devouredValue, cb) {
+		orm.update(table, id, devouredValue, function (res) {
 			cb(res);
-			console.log("orm model UPDATE is working")
+
 		});
 	},
-	delete: function (condition, cb) {
-		console.log("workings??")
-		orm.delete('burgers',condition, function (res) {
-			console.log("workings11111??")
+	delete: function (table,condition, cb) {
+		
+		orm.delete(table,condition, function (res) {
+			
 			cb(res);
-			console.log("orm model DELELTE is working")
+			
 		});
 	}
 };

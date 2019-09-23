@@ -8,9 +8,11 @@ them into database commands like SQL.
 
 
 var orm = {
-	all: function (table, r) {
-		 link.query("SELECT * FROM "+table,(req,res)=>{
+	all: function (table,column,devoured, r) {
+		 link.query("SELECT * FROM "+table+" WHERE "+column+ " = " +devoured,(req,res)=>{
             r(res)
+           
+         
         })
 	},
 
@@ -21,17 +23,18 @@ var orm = {
             devoured: devoured
         }
             link.query("INSERT INTO "+table+" SET ?",post,(req,res)=>{
-                console.log("Inserted Post ")
+              
                 r(res)
 
             })
 	},
 		// objColVals would be the columns and values that you want to update
 		// an example of objColVals would be {name: panther, sleepy: true}
-	update: function  (table, devoured,id,r) {
+	update: function  (table,id,devouredValue,cb) {
+        
         link.query("UPDATE "+table+" SET ?  WHERE ?",  [{
 
-                        devoured: devoured
+                        devoured: parseInt(devouredValue)
             
                     },
                 {
@@ -40,14 +43,25 @@ var orm = {
                 }],(req,res)=>{
                         
                         if(res){
-                            console.log("UPDATED") 
-                        r(res)
+                           
+                        cb(res)
                         }else{
                             console.log("Fail") 
                         }
                     })
 
-	},
+    },
+
+    delete:function(table,id,cb){
+        link.query("DELETE FROM " +table+ " WHERE id = "+id,(err,result)=>{
+            if(err){
+                console.log(err)
+            }else{
+                cb(result)
+                
+            }
+        })
+    }
 
 
 	
