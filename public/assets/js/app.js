@@ -1,10 +1,10 @@
 /// <reference path="../typings/globals/jquery/index.d.ts" />
 
 $(".delete-button").on('click', function(e){
- 
+  e.preventDefault();
   var id = $(this).data('delete');
   var table = "burgers";
-  e.preventDefault();
+
   var deleteBurger = {
     id: id,
     burgers: table

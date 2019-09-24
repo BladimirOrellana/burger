@@ -3,41 +3,32 @@
   <div class="container-fluid wrapper">
      <div class="row">
          <div class="boxes col-sm-12 col-md-3 col-lg-3" id="left-container">
-             <div class="row">
+             
                  {{#each data}}
+                 {{#unless devoured}}
+                 <div class="row">
+                 
                  <div class="col-sm-12 burger-box">
                      
                      <div class="row">
                          <div class="col-sm-8">
-                             
-                             {{burger_name}}
-                             {{devoured}}
-                             
-                           
-                            
-
-                         </div>
-                         <div class="col-sm-4">
-
-                              {{> buttons/buttons}}
-
-                        </div>
+   
+                          {{burger_name}}
+                          </div>
+                           <div class="col-sm-4">
+                        {{>buttons/buttons}}
                      </div>
-                     
-                 </div>
-                 {{else}}
+                     </div>
+                    </div>
+                    </div>
+                  {{/unless}}
+                   {{else}}
                  <div class="container text-center">
                      <p class="empty">Empty Table</p>
                  </div>
-  
-
-               
                  {{/each}}
-                 </div>
-
-             
-
-         </div>
+                 
+                  </div>
          <div class="boxes col-sm-12 col-md-6 col-lg-6" id="center-container">
              <form action="/" method="POST">
              <textarea name="hanburger" id="hanburger" cols="30" rows="2" placeholder="Name your hambuger"></textarea>
@@ -49,37 +40,25 @@
          </div>
          <div class="boxes col-sm-12 col-md-3 col-lg-3" id="right-container">
            
-             <div class="row">
-                 {{#each dataDevoured}}
+   <div class="row">
+                 {{#each data}}
+                 {{#if devoured}}
                  <div class="col-sm-12 burger-box">
-                     
                      <div class="row">
                          <div class="col-sm-8">
-                             
-                             {{burger_name}}
-                             {{devoured}}
-                             
-                           
-                            
-
-                         </div>
-                         <div class="col-sm-4">
-
-                              {{> buttons/buttons}}
-
+                        {{burger_name}}
                         </div>
-                     </div>
-                     
-                 </div>
-                 {{else}}
-                 <div class="container text-center">
-                     <p class="empty">Empty Table</p>
-                 </div>
-  
-
-               
+                    <div class="col-sm-4">
+                {{>buttons/buttons}}
+                </div>
+            </div>
+                </div>
+                  {{/if}}
                  {{/each}}
                  </div>
+
+
+
 
          </div>
      </div>

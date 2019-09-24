@@ -29,14 +29,11 @@ app.set('view engine', 'handlebars')
  })
 
  app.get('/',(req,res)=>{
-     var devoured = 0;
-     var column = 'devoured';
-     var table = 'burgers'
-    burgermodel.all(table,column,devoured,function(data){
+   var table = 'burgers'
+    burgermodel.all(table,function(data){
         
         res.render('index',{data: data})
-        
-
+      
         
     })
 
@@ -45,6 +42,7 @@ app.set('view engine', 'handlebars')
   
      
  })
+
 
 
      app.post('/', (req,res)=>{

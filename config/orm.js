@@ -8,8 +8,8 @@ them into database commands like SQL.
 
 
 var orm = {
-	all: function (table,column,devoured, r) {
-		 link.query("SELECT * FROM "+table+" WHERE "+column+ " = " +devoured,(req,res)=>{
+	all: function (table, r) {
+		 link.query("SELECT * FROM "+table,(req,res)=>{
             r(res)
            
          

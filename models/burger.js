@@ -6,8 +6,8 @@ Here is where you setup a model for how to interface with the database.
 
 
 var burgermodel = {
-	all: function (table,column,devoured,r) {     
-		orm.all(table,column,devoured, function (res) {
+	all: function (table,r) {     
+		orm.all(table, function (res) {
 			r(res);
 			
 		});
